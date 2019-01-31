@@ -2,4 +2,4 @@
 
 Base image for EO processing
 Build:
-```docker build eo .```
+```docker build -t redblanket/eo:v1 .```
