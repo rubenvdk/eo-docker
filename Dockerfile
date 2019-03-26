@@ -7,7 +7,7 @@ RUN apt-get update && \
 
 USER jovyan
 
-RUN pip install rasterio shapely && \
+RUN pip install rasterio shapely pyshp && \
     conda install -y gdal
 
 # ENTRYPOINT ["tini", "-g", "--"]
