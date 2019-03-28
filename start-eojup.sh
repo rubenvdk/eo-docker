@@ -5,7 +5,7 @@
 
 IMAGE="redblanket/eojup:latest"
 
-CONTAINER_NAME="eojupy"
+CONTAINER_NAME="eojupy_minio"
 
 NB_USERNAME="jovyan" # Changing this leads to errors... to be tested
 
@@ -31,6 +31,7 @@ docker run -d \
   --restart always \
   --name $CONTAINER_NAME \
   -p 9999:8888 \
+  -p 9000:9000 \
   -v ${DATA}:${DATA_MOUNT} \
   -v ${HOST_WORK}:${CONTAINER_WORK} \
   -e NB_UID=`id -u` \
