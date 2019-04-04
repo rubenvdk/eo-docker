@@ -7,7 +7,7 @@ RUN apt-get update && \
 
 USER jovyan
 
-RUN pip install rasterio shapely pyshp tqdm psycopg2-binary && \
+RUN pip install rasterio shapely pyshp tqdm psycopg2-binary sentinelsat && \
     conda install -y gdal
 
 # ENTRYPOINT ["tini", "-g", "--"]
