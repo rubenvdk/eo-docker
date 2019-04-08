@@ -5,7 +5,7 @@
 
 IMAGE="redblanket/eojup:latest"
 
-CONTAINER_NAME="eojupy"
+CONTAINER_NAME="eojupy_spark"
 
 NB_USERNAME="jovyan" # Changing this leads to errors... to be tested
 
