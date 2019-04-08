@@ -5,7 +5,7 @@
 
 IMAGE="redblanket/eojup:latest"
 
-CONTAINER_NAME="eojupy_minio"
+CONTAINER_NAME="eojupy"
 
 NB_USERNAME="jovyan" # Changing this leads to errors... to be tested
 
@@ -19,19 +19,18 @@ DATA_MOUNT="/data/"
 # DATA="/c/Users/ZANAGAD/Downloads"
 # DATA_MOUNT="/home/$NB_USERNAME/Downloads"
 
-
 JUPYTER_TOKEN="d920926ebf16df183c9cbbddbe15966d5798902567a75ab3"
 # "c8de56fa4deed24899803e93c227592aef6538f93025fe01"
 # To generate an hashed password:
 # >>> import IPython
 # >>> IPython.lib.passwd()
 # HASHED_PASSWD="'sha1:67a75ab3faee:d920926ebf16df183c9cbbddbe15966d57989025'"  # vito
+# --network host
 
 docker run -d \
   --restart always \
   --name $CONTAINER_NAME \
-  -p 9999:8888 \
-  -p 9000:9000 \
+  --network host \
   -v ${DATA}:${DATA_MOUNT} \
   -v ${HOST_WORK}:${CONTAINER_WORK} \
   -e NB_UID=`id -u` \
